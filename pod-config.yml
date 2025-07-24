@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-pod
+  namespace: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:stable-alpine3.21-perl
+      ports:
+      - containerPort: 80

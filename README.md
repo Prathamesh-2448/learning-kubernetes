@@ -159,6 +159,19 @@ Check different pods
 ```
 kubectl get pods -n [namespace]
 ```
+To Enter into the running pod's container
+```
+kubectl exec -it pod/[pod-name] -n [namespace] -- [cmd-to-be-run]
+```
+Ex.
+```
+kubectl exec -it pod/nginx-pod -n nginx -- sh
+```
+To get a detailed Description about the Pod:
+```
+kubectl describe pod/nginx-pod -n nginx
+```
+
 A **Deployment** in Kubernetes manages the desired state of Pods by automatically creating, updating, or deleting them as needed.
 It runs on the **control plane**, which schedules the Pods to run on the **worker nodes**.
 

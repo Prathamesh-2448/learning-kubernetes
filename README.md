@@ -182,7 +182,33 @@ kubectl apply -f deployment-config.yml
 
 Make sure that you have created the deployment configuration yaml file
 
+### Labels: 
+- Key–value pairs attached to objects (Pods, Services, ReplicaSets, etc.).
+- Its purpose is to provide metadata that helps organize, group, and select objects.
+
+### Selector:
+- A query that matches labels on objects.
+- Used by controllers (like Deployments, ReplicaSets) or Services to find the pods they should manage.
+
 Check different deployments
 ```
 kubectl get deployments -n [namespace]
 ```
+If we want to scale the deployment i.e increase or decrease number of pods running then:
+```
+kubectl scale deployment/[deployment-name] -n [namespace] --replicas=[number of replicas]
+```
+Ex.
+```
+kubectl scale deployment/nginx-deployment -n nginx --replicas=5
+```
+
+To update an image in a pod without the need of terminating all replicas of pods:
+```
+kubectl set image deployment/[deployment-name] -n [namespace] [pod-name]=[image:tag]
+```
+Ex.
+```
+kubectl set image deployment/nginx-deployment -n nginx nginx=nginx:latest
+```
+Deployment does not let all the pods to terminate in order to update the image. It updates the images one-by-one with some of the pods still running until others finish updating. This leads in zero down-time and known as **Rolling update**.

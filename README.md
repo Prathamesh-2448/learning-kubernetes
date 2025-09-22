@@ -129,6 +129,9 @@ Once the cluster is created using cluster configuration yaml file you can check 
 ```
 kubectl get nodes
 ```
+
+# Namespaces
+
 **Namespaces** in Kubernetes are virtual clusters within a physical cluster that help organize and isolate resources like pods, services, and deployments.
 
 To Create a new Namespace, use:
@@ -143,6 +146,7 @@ Check different Namespaces:
 ```
 kubectl get ns
 ```
+# Pods
 
 A **Pod** is the smallest deployable unit in Kubernetes that encapsulates one or more containers, along with shared storage and networking.
 A Pod is **created and runs inside a worker node** within the Kubernetes cluster.

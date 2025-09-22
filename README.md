@@ -171,6 +171,17 @@ To get a detailed Description about the Pod:
 ```
 kubectl describe pod/nginx-pod -n nginx
 ```
+# Workloads
+
+- Deployment → Manages ReplicaSets with rollout/rollback support for stateless apps.
+
+- ReplicaSet → Ensures a fixed number of identical Pods are always running.
+
+- DaemonSet → Ensures one Pod runs on every (or selected) node for node-level tasks.
+
+- StatefulSet → Manages Pods with unique, stable identities and persistent storage.
+
+## 1. Deployments
 
 A **Deployment** in Kubernetes manages the desired state of Pods by automatically creating, updating, or deleting them as needed.
 It runs on the **control plane**, which schedules the Pods to run on the **worker nodes**.
